@@ -19,4 +19,5 @@ Ok
 Ok
 ## 7. Crear y administrar usuarios
 ## 8. Crear y administrar tablero
+Pendiente: Listar paginado
 ## 9. Obtener mediciones de sensores

@@ -1,4 +1,4 @@
-import { createDashboard, loginWithTestUser, navigateToDashboards, randomNumber } from "../../fixtures/tests"
+import { createDashboard, loginWithTestUser, navigateToDashboards, randomNumber } from "../../fixtures/shared"
 
 describe('8.1 - Crear tablero', () => {
     it('Caso de uso', () => {
