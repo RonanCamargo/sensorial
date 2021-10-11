@@ -8,7 +8,7 @@ describe('7. Crear y administrar usuarios', () => {
         cy.visit('https://www.sensorial.me')
 
         login(validUser)
-        createUser(newAdminUser, "Admin")
+        createUser(newAdminUser)
         logout()
         login(newAdminUser)
     })

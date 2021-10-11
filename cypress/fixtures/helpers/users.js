@@ -1,5 +1,5 @@
 export function logout(){
-    cy.get('.jss49 > .MuiIconButton-label > .MuiSvgIcon-root').click()
+    cy.get('header').find('button').last().click()
     cy.get('.MuiGrid-root > .MuiButtonBase-root > .MuiButton-label').click()
 }
 
@@ -8,10 +8,10 @@ export function login(user, invalidCredentials) {
     cy.get('#password').clear().type(user.password).should('have.value',user.password)
     cy.get('.MuiButton-label').click()
     if(!invalidCredentials) cy.url().should('include', '/app/dashboards')
-    else cy.contains('Usuario o password incorrecto')
+    else cy.contains('Usuario o password incorrecto').should('exist')
 }
 
-export function createUser(user, role){
+export function createUser(user){
     cy.get('[href="#/app/usuarios"] > .MuiListItemText-root > .MuiTypography-root').click()
     cy.get('.jss100 > div > .MuiButtonBase-root > .MuiButton-label').click()
     cy.get('#name').type(user.name)
@@ -22,15 +22,17 @@ export function createUser(user, role){
     cy.get(':nth-child(5) > .MuiInputBase-root > #outlined-password-input').type(user.password)
     cy.get('#outlined-tel').type(user.phone)
     cy.get('#outlined-select').click()
-    if(role == "Admin") cy.get('#menu- > .MuiPaper-root > .MuiList-root > [tabindex="0"]').click()
-    else cy.get('#menu- > .MuiPaper-root > .MuiList-root > [tabindex="1"]').click()
+    
+    if(user.role == "Admin") cy.get('#menu- > .MuiPaper-root > .MuiList-root > [tabindex="0"]').click()
+    else cy.get('.MuiList-root > [tabindex="-1"]').click()
     
     cy.get(':nth-child(2) > .MuiButton-label').click()
-    cy.contains('Usuario creado exitosamente')
+    cy.contains('Usuario creado exitosamente').should('exist')
 }
 
 export function deleteUser(email){
     cy.get('[href="#/app/usuarios"] > .MuiListItemText-root > .MuiTypography-root').click()
-    cy.get('.jss100 > div > .MuiButtonBase-root > .MuiButton-label').click()
-    cy.contains(email).each(console.log)
+    cy.contains(email).parent().parent().find('td').first().click()
+    cy.get('.MuiPaper-root > .MuiButtonBase-root > .MuiIconButton-label > .MuiSvgIcon-root > path').click()
+    cy.contains('Usuario borrado exitosamente').should('exist')
 }

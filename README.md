@@ -18,6 +18,7 @@ Ok
 ## 6. Iniciar sesión
 Ok
 ## 7. Crear y administrar usuarios
+Pendiente desarrollo: Crear usuario duplicado
 ## 8. Crear y administrar tablero
 Pendiente: Listar paginado
 ## 9. Obtener mediciones de sensores

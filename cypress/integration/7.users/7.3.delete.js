@@ -1,17 +1,20 @@
 import newAdminUser from "../../fixtures/data/new-admin-user.json"
 import validUser from "../../fixtures/data/admin-user.json"
 import { createUser, deleteUser, login, logout } from "../../fixtures/helpers/users"
+import { loginPage } from "../../fixtures/shared"
 
 describe('7. Crear y administrar usuarios', () => {
     it('7.3. Eliminar usuario', () => {
-        cy.visit('https://www.sensorial.me')
+        loginPage()
 
         login(validUser)
-        createUser(newAdminUser, "Admin")
+        createUser(newAdminUser)
         logout()
         login(newAdminUser)
         logout()
         login(validUser)
-        deleteUser('random@sensorial.me')
+        deleteUser(newAdminUser.email)
+        logout()
+        login(newAdminUser, true)
     })
 })

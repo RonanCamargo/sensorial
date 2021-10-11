@@ -1,6 +1,7 @@
 {
-    "name":"Test Admin",
+    "name":"Random Admin",
     "email":"random@sensorial.me",
     "password":"sensorial",
-    "phone":"1112321232"
+    "phone":"1112321232",
+    "role":"Admin"
 }
