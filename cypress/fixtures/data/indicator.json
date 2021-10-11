@@ -1,0 +1,10 @@
+{
+    "name":"Indicador de prueba",
+    "type":"Temperatura",
+    "sensors":["Almacen 1", "T1"],
+    "limits":{
+        "upper":30,
+        "lower":20
+    },
+    "refresh_rate":5
+}

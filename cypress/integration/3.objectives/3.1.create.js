@@ -11,4 +11,3 @@ describe('3.1 - Crear objetivo en base a un indicador', () => {
         //cy.contains('td',objectiveName).then(elem => expect(elem).to.be(objectiveName)) 
     })
 })
-
