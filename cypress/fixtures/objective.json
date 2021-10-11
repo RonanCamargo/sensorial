@@ -1,0 +1,7 @@
+{
+    "name":"Objetivo de prueba",
+    "description":"Objetivo",
+    "date_start":"2021-12-08T00:00",
+    "date_end":"2021-12-10T00:00",
+    "expected_value":"50"
+}

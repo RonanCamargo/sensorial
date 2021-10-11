@@ -2,15 +2,16 @@
 
 ## Run
 
-npm run cy
+npm run cyo
 
 ## Run and generate videos
 
-npm run cy-run
+npm run cyr
 
 ## 1. Visualizar datos históricos de los indicadores
 ## 2. Visualizar Indicadores
 ## 3. Crear y administrar objetivo
+Ok
 ## 4. Crear y administrar Indicadores
 ## 5. Generar reporte
 ## 6. Iniciar sesión
