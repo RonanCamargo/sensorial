@@ -11,7 +11,7 @@ export function login(user, invalidCredentials) {
     else cy.contains('Usuario o password incorrecto').should('exist')
 }
 
-export function createUser(user){
+export function createUser(user, duplicated){
     cy.get('[href="#/app/usuarios"] > .MuiListItemText-root > .MuiTypography-root').click()
     cy.get('.jss100 > div > .MuiButtonBase-root > .MuiButton-label').click()
     cy.get('#name').type(user.name)
@@ -27,7 +27,9 @@ export function createUser(user){
     else cy.get('.MuiList-root > [tabindex="-1"]').click()
     
     cy.get(':nth-child(2) > .MuiButton-label').click()
-    cy.contains('Usuario creado exitosamente').should('exist')
+
+    if(!!duplicated) cy.contains('Ya existe usuario registrado con el mismo mail').should('exist')
+    else cy.contains('Usuario creado exitosamente').should('exist')
 }
 
 export function deleteUser(email){
