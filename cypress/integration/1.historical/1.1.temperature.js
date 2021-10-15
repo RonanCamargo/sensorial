@@ -6,7 +6,7 @@ describe('1.1 - Visualizar histórico de sensor de temperatura', () => {
         loginWithTestUser()
         navigateToTestDashboard()
 
-        cy.wait(2000)
+        cy.wait(8000)
         cy.get(':nth-child(5) > .jss132 > .MuiPaper-root > .jss133 > .MuiButtonBase-root').click()
 
         //cy.get(':nth-child(3) > .jss132 > .MuiPaper-root > .jss133 > .MuiButtonBase-root > .MuiIconButton-label > .MuiSvgIcon-root').click()
@@ -16,5 +16,6 @@ describe('1.1 - Visualizar histórico de sensor de temperatura', () => {
         cy.get('#datetime-localend').type('2021-10-20T00:00')
         cy.get('.MuiDialogActions-root > :nth-child(2) > .MuiButton-label').click()
         cy.get('.recharts-responsive-container > .recharts-wrapper > .recharts-surface').should('exist')        
+        cy.wait(5000)
     })
 })
