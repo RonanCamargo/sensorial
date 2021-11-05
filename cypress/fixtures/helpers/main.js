@@ -7,5 +7,5 @@ export function selectDashboard(name){
 
 export function navigateToTestDashboard(){
     selectDashboard(testDashboard.name)
-    //cy.wait(3000)
+    cy.wait(3000)
 }

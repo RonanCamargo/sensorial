@@ -6,5 +6,6 @@ describe('5.3 - Iniciar sesion con usuario invalido', () => {
     it('Invalid login', () => {
         loginPage()
         login(invalidUser, true)
+        cy.wait(2000)
     })
 })

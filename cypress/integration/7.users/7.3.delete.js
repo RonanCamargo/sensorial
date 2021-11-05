@@ -16,5 +16,6 @@ describe('7. Crear y administrar usuarios', () => {
         deleteUser(newAdminUser.email)
         logout()
         login(newAdminUser, true)
+        cy.wait(2000)
     })
 })

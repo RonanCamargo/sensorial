@@ -18,9 +18,9 @@ Ok
 Ok
 ## 5. Generar reporte
 ## 6. Iniciar sesión
-Ok
+Ok => Clean
 ## 7. Crear y administrar usuarios
-Ok
+Ok => Clean
 ## 8. Crear y administrar tablero
 Pendiente: Listar paginado
 ## 9. Obtener mediciones de sensores

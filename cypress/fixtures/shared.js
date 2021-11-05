@@ -2,7 +2,7 @@ import validUser from './data/admin-user.json'
 import { login } from './helpers/users'
 
 export function loginPage(){
-    cy.visit('https://www.sensorial.me/')
+    cy.visit('localhost/')
 }
 
 export function loginWithTestUser(){
@@ -11,12 +11,16 @@ export function loginWithTestUser(){
 }
 
 export function navigateToDashboards(){
-    cy.get('[href="#/app/tableros"] > .MuiListItemText-root > .MuiTypography-root').click()
+    //cy.get('[href="#/app/tableros"] > .MuiListItemText-root > .MuiTypography-root').click()
+    cy.contains('Tableros').click()
     cy.url().should('include','/app/tableros')
 }
 
 export function createDashboard(name, description){
-    cy.get('.jss100 > .MuiBox-root > div > .MuiButtonBase-root > .MuiButton-label').click()
+    cy.wait(2000)
+    cy.contains('Agregar tablero').click()
+    //cy.get('.jss100 > .MuiBox-root > div > .MuiButtonBase-root').click()
+    //cy.get('.jss105 > .MuiBox-root > div > .MuiButtonBase-root').click()
     cy.get(':nth-child(2) > .MuiInputBase-root > #name').clear().type(name)
     cy.get(':nth-child(3) > .MuiInputBase-root > #name').clear().type(description)
     cy.get(':nth-child(2) > .MuiButton-label').click()

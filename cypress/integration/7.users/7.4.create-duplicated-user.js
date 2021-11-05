@@ -1,6 +1,6 @@
 import validUser from "../../fixtures/data/admin-user.json"
 import newOperativeUser from "../../fixtures/data/new-operative-user.json"
-import { createUser, login, logout } from "../../fixtures/helpers/users"
+import { createUser, deleteUser, login, logout } from "../../fixtures/helpers/users"
 import { loginPage } from "../../fixtures/shared"
 
 describe('7. Crear y administrar usuarios', () => {
@@ -10,6 +10,9 @@ describe('7. Crear y administrar usuarios', () => {
         login(validUser)
         createUser(newOperativeUser)
         createUser(newOperativeUser, true)
+        cy.wait(1000)
+        deleteUser(newOperativeUser.email)
+        cy.wait(1000)
         
     })
 })
