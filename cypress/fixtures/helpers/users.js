@@ -13,7 +13,8 @@ export function login(user, invalidCredentials) {
 
 export function createUser(user, duplicated){
     cy.get('[href="#/app/usuarios"] > .MuiListItemText-root > .MuiTypography-root').click()
-    cy.get('.jss105 > div > .MuiButtonBase-root > .MuiButton-label').click()
+    //cy.get('.jss105 > div > .MuiButtonBase-root > .MuiButton-label').click()
+    cy.contains('Agregar usuario').click()
     cy.get('#name').type(user.name)
     cy.get('#mail').type(user.email)
     

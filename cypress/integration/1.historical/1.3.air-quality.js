@@ -7,7 +7,7 @@ describe('1.3 - Visualizar histórico de sensor de calidad de aire', () => {
         navigateToTestDashboard()
 
         cy.wait(5000)
-        cy.get(':nth-child(6) > .jss132 > .MuiPaper-root > .jss133 > .MuiButtonBase-root > .MuiIconButton-label > .MuiSvgIcon-root').click()
+        cy.get(':nth-child(6) > .jss182 > .MuiPaper-root > .jss183 > .MuiButtonBase-root > .MuiIconButton-label').click()
         cy.contains('Ver histórico').click()
         cy.get('.MuiGrid-container > :nth-child(1) > .MuiButtonBase-root > .MuiButton-label').click()
         cy.get('#datetime-localinit').type('2021-10-01T00:00')

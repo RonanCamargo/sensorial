@@ -1,5 +1,5 @@
 function selectByName(name) {
-    cy.wait(5000)
+    cy.wait(3000)
     cy.contains(name).click()
 }
 

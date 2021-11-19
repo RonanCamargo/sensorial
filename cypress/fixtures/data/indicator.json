@@ -1,7 +1,7 @@
 {
     "name":"Indicador de prueba",
     "type":"Temperatura",
-    "sensors":["Almacen 1", "T1"],
+    "sensors":["T1", "T2"],
     "limits":{
         "upper":30,
         "lower":20

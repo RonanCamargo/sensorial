@@ -9,7 +9,6 @@ describe('5.2 - Iniciar sesion con usuario operario', () => {
         loginPage()
         login(user)
         isOperative()
-        logout()
-        cy.wait(2000)
+        cy.wait(5000)
     })
 })

@@ -2,7 +2,9 @@ import validUser from './data/admin-user.json'
 import { login } from './helpers/users'
 
 export function loginPage(){
-    cy.visit('localhost/')
+    let local = 'localhost/'
+    let test = 'https://www.sensorial.me/'
+    cy.visit(test)
 }
 
 export function loginWithTestUser(){
@@ -16,8 +18,8 @@ export function navigateToDashboards(){
     cy.url().should('include','/app/tableros')
 }
 
-export function createDashboard(name, description){
-    cy.wait(2000)
+export function createDashboard(name, description, wait){
+    if(!!wait) cy.wait(2000)
     cy.contains('Agregar tablero').click()
     //cy.get('.jss100 > .MuiBox-root > div > .MuiButtonBase-root').click()
     //cy.get('.jss105 > .MuiBox-root > div > .MuiButtonBase-root').click()
@@ -27,10 +29,17 @@ export function createDashboard(name, description){
 }
 
 export function deleteDashboard(name){
+    cy.wait(1000)
     cy.contains(name).parent().parent().find('td').first().click()
     cy.get('.MuiPaper-root > .MuiButtonBase-root > .MuiIconButton-label > .MuiSvgIcon-root > path').click()
 }
 
 export function randomNumber(){
     return Math.floor(Math.random() * 100)
+}
+
+export function createDashboardWithRandomName(){
+    const dashboardName = `Tablero Nuevo ${randomNumber()}`
+    createDashboard(dashboardName, 'Tablero', false)
+    return dashboardName
 }

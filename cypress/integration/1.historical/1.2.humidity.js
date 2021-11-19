@@ -7,7 +7,7 @@ describe('1.2 - Visualizar histórico de sensor de humedad', () => {
         navigateToTestDashboard()
 
         cy.wait(8000)
-        cy.get(':nth-child(5) > .jss132 > .MuiPaper-root > .jss133 > .MuiButtonBase-root > .MuiIconButton-label > .MuiSvgIcon-root').click()
+        cy.get(':nth-child(5) > .jss182 > .MuiPaper-root > .jss183 > .MuiButtonBase-root > .MuiIconButton-label').click()
         cy.contains('Ver histórico').click()
         cy.get('.MuiGrid-container > :nth-child(1) > .MuiButtonBase-root > .MuiButton-label').click()
         cy.get('#datetime-localinit').type('2021-10-01T00:00')

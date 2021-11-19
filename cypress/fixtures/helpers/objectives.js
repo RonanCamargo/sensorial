@@ -17,5 +17,6 @@ export function createObjective(objective){
 
 export function deleteObjective(objective){
     cy.contains(objective.name).click()
-    cy.get('.jss167 > .MuiButtonBase-root > .MuiButton-label').click()
+    cy.contains('Delete').click()
+    //cy.get('.jss167 > .MuiButtonBase-root > .MuiButton-label').click()
 }

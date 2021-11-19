@@ -7,7 +7,7 @@ describe('1.1 - Visualizar histórico de sensor de temperatura', () => {
         navigateToTestDashboard()
 
         cy.wait(8000)
-        cy.get(':nth-child(5) > .jss132 > .MuiPaper-root > .jss133 > .MuiButtonBase-root').click()
+        cy.get(':nth-child(3) > .jss182 > .MuiPaper-root > .jss183 > .MuiButtonBase-root > .MuiIconButton-label > .MuiSvgIcon-root').click()
 
         //cy.get(':nth-child(3) > .jss132 > .MuiPaper-root > .jss133 > .MuiButtonBase-root > .MuiIconButton-label > .MuiSvgIcon-root').click()
         cy.contains('Ver histórico').click()

@@ -7,5 +7,6 @@ describe('4.2 - Eliminar indicador', () => {
         loginWithTestUser()
         createIndicator(indicator)
         deleteIndicator(indicator)
+        cy.wait(5000)
     })
 })
